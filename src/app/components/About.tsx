@@ -1,4 +1,4 @@
-const ABOUT_IMAGE = "https://images.unsplash.com/photo-1542432389-a40026383873?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxvcHRpY2lhbiUyMGNsaWVudCUyMGNvbnN1bHRhdGlvbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3ODMwOTQwMDF8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const ABOUT_IMAGE = "https://images.unsplash.com/photo-1572635196237-14b3f281503f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&w=1080&h=1080";
 
 const stats = [
   { value: "+10", label: "Années d'expertise en optique" },
@@ -32,7 +32,7 @@ export function About() {
           }} />
           <img
             src={ABOUT_IMAGE}
-            alt="Opticien Optic Prestance"
+            alt="Lunettes à verres teintés noirs Optic Prestance"
             style={{
               width: "100%",
               height: "480px",

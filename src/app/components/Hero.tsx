@@ -1,12 +1,12 @@
-import { ChevronDown, Monitor } from "lucide-react";
+import { ChevronDown, GraduationCap, Microscope, Monitor, Radio, Truck } from "lucide-react";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1758691463198-dc663b8a64e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcHRpY2lhbiUyMGNsaWVudCUyMGNvbnN1bHRhdGlvbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3ODMwOTQwMDF8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const HERO_IMAGE = "https://images.unsplash.com/photo-1536766820879-059fec98ec0a?crop=faces&cs=tinysrgb&fit=crop&fm=jpg&q=80&w=1920&h=1080";
 
 const reassuranceItems = [
-  { icon: "🎓", label: "Opticiens diplômés & expérimentés" },
-  { icon: "🔬", label: "Verres fabriqués sur-mesure" },
-  { icon: "📡", label: "Consultation à distance, partout au Cameroun" },
-  { icon: "🚚", label: "Livraison à domicile" },
+  { icon: <GraduationCap size={28} />, label: "Opticiens diplômés & expérimentés" },
+  { icon: <Microscope size={28} />, label: "Verres fabriqués sur-mesure" },
+  { icon: <Radio size={28} />, label: "Consultation à distance, partout au Cameroun" },
+  { icon: <Truck size={28} />, label: "Livraison à domicile" },
 ];
 
 function handleScroll(href: string) {
@@ -21,7 +21,7 @@ export function Hero() {
       <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <img
           src={HERO_IMAGE}
-          alt="Consultation opticien"
+          alt="Homme portant des lunettes à verres teintés noirs"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
         />
         <div style={{
@@ -165,7 +165,7 @@ export function Hero() {
                 borderRight: i < 3 ? "1px solid #F4F4F4" : "none",
               }}
             >
-              <span style={{ fontSize: "28px" }}>{item.icon}</span>
+              <span style={{ color: "#C41230", display: "flex", flexShrink: 0 }}>{item.icon}</span>
               <span style={{
                 fontFamily: "Montserrat, sans-serif",
                 fontWeight: 600,

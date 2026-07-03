@@ -1,4 +1,21 @@
-import { Eye, Monitor, Wrench, Truck, Star, Shield, Zap, Users, MessageCircle, Droplets } from "lucide-react";
+import {
+  ArrowUpDown,
+  Baby,
+  Car,
+  Droplets,
+  Eye,
+  Feather,
+  MessageCircle,
+  Monitor,
+  Palette,
+  RefreshCw,
+  Sparkles,
+  Star,
+  Sun,
+  Truck,
+  Users,
+  Wrench,
+} from "lucide-react";
 
 const lensTypes = [
   { name: "Verres unifocaux", desc: "Une seule correction, pour la myopie, l'hypermétropie ou l'astigmatisme." },
@@ -13,7 +30,18 @@ const lensTypes = [
   { name: "Verres pour enfants", desc: "Verres résistants aux chocs, adaptés à la croissance visuelle." },
 ];
 
-const lensIcons = ["👁️", "🔄", "↕️", "💻", "☀️", "🌈", "🚗", "✨", "🪶", "👦"];
+const lensIcons = [
+  <Eye size={28} />,
+  <RefreshCw size={28} />,
+  <ArrowUpDown size={28} />,
+  <Monitor size={28} />,
+  <Sun size={28} />,
+  <Palette size={28} />,
+  <Car size={28} />,
+  <Sparkles size={28} />,
+  <Feather size={28} />,
+  <Baby size={28} />,
+];
 
 const mainServices = [
   {
@@ -225,7 +253,7 @@ export function Services() {
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
                 }}
               >
-                <div style={{ fontSize: "28px", marginBottom: "12px" }}>{lensIcons[i]}</div>
+                <div style={{ color: "#C41230", display: "flex", justifyContent: "center", marginBottom: "12px" }}>{lensIcons[i]}</div>
                 <div style={{
                   fontFamily: "Montserrat, sans-serif",
                   fontWeight: 600,

@@ -122,6 +122,7 @@ export function HowItWorks() {
 
         {/* Steps */}
         <div
+          className="steps-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",
@@ -132,6 +133,7 @@ export function HowItWorks() {
         >
           {/* Connector line */}
           <div
+            className="connector"
             style={{
               position: "absolute",
               top: "36px",

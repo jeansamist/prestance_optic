@@ -442,7 +442,7 @@ export function Services() {
           display: flex;
           gap: 16px;
           width: max-content;
-          animation: services-scroll 80s linear infinite;
+          animation: services-scroll 120s linear infinite;
         }
         .services-marquee-card {
           flex: 0 0 240px;

@@ -68,7 +68,7 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                <div className="name-phone-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                   <div>
                     <label style={{
                       fontFamily: "Montserrat, sans-serif", fontWeight: 600,
@@ -324,7 +324,8 @@ export function Contact() {
         @media (max-width: 900px) {
           #contact .form-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
+          #contact .name-phone-grid { grid-template-columns: 1fr !important; }
           #contact .info-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

@@ -182,8 +182,9 @@ export function Services() {
           </p>
         </div>
 
-        {/* Main Services Grid */}
+        {/* Main Services Grid — desktop/tablet */}
         <div
+          className="services-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -263,8 +264,42 @@ export function Services() {
           ))}
         </div>
 
+        {/* Main Services Marquee — mobile only, auto-scrolls right to left */}
+        <div className="services-marquee" style={{ marginBottom: "80px" }}>
+          <div className="services-marquee-track">
+            {[...mainServices, ...mainServices].map((service, i) => (
+              <div className="services-marquee-card" key={i}>
+                <div style={{ color: "#C41230", marginBottom: "16px" }}>{service.icon}</div>
+                <h3
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "15px",
+                    color: "#1A1A1A",
+                    marginBottom: "10px",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "13px",
+                    color: "#666",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Lens Types Section */}
         <div
+          className="services-lens-section"
           style={{
             backgroundColor: "#1A1A1A",
             padding: "64px 48px",
@@ -331,6 +366,7 @@ export function Services() {
           </div>
 
           <div
+            className="services-lens-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(5, 1fr)",
@@ -398,15 +434,42 @@ export function Services() {
       </div>
 
       <style>{`
+        .services-marquee { display: none; }
+
+        .services-marquee-track {
+          display: flex;
+          gap: 16px;
+          width: max-content;
+          animation: services-scroll 26s linear infinite;
+        }
+        .services-marquee-card {
+          flex: 0 0 240px;
+          background-color: #F4F4F4;
+          border-top: 3px solid #C41230;
+          padding: 28px 20px;
+        }
+        @keyframes services-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .services-marquee-track { animation: none; }
+        }
+
         @media (max-width: 1024px) {
-          #services .main-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          #services .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 900px) {
-          #services .lens-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          #services .services-lens-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          #services .services-lens-section { padding: 48px 28px !important; }
         }
-        @media (max-width: 600px) {
-          #services .main-grid { grid-template-columns: 1fr !important; }
-          #services .lens-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        @media (max-width: 700px) {
+          #services .services-grid { display: none !important; }
+          #services .services-marquee { display: block !important; overflow: hidden; }
+        }
+        @media (max-width: 480px) {
+          #services .services-lens-grid { grid-template-columns: 1fr !important; }
+          #services .services-lens-section { padding: 40px 20px !important; }
         }
       `}</style>
     </section>

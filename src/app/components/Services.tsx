@@ -269,7 +269,9 @@ export function Services() {
           <div className="services-marquee-track">
             {[...mainServices, ...mainServices].map((service, i) => (
               <div className="services-marquee-card" key={i}>
-                <div style={{ color: "#C41230", marginBottom: "16px" }}>{service.icon}</div>
+                <div style={{ color: "#C41230", marginBottom: "16px" }}>
+                  {service.icon}
+                </div>
                 <h3
                   style={{
                     fontFamily: "Poppins, sans-serif",
@@ -440,7 +442,7 @@ export function Services() {
           display: flex;
           gap: 16px;
           width: max-content;
-          animation: services-scroll 26s linear infinite;
+          animation: services-scroll 80s linear infinite;
         }
         .services-marquee-card {
           flex: 0 0 240px;

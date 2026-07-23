@@ -38,7 +38,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div style={{
+        <div className="form-grid" style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "64px",
@@ -228,7 +228,7 @@ export function Contact() {
 
           {/* Info + Map */}
           <div>
-            <div style={{
+            <div className="info-grid" style={{
               display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "32px",
             }}>
               {[

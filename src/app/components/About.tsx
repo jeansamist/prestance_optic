@@ -14,6 +14,7 @@ export function About() {
       style={{ backgroundColor: "#F4F4F4", padding: "100px 0 0" }}
     >
       <div
+        className="about-top-grid"
         style={{
           maxWidth: "1280px",
           margin: "0 auto",
@@ -25,8 +26,9 @@ export function About() {
         }}
       >
         {/* Image */}
-        <div style={{ position: "relative" }}>
+        <div className="about-image-wrap" style={{ position: "relative" }}>
           <div
+            className="about-image-accent"
             style={{
               position: "absolute",
               top: "-20px",
@@ -38,6 +40,7 @@ export function About() {
             }}
           />
           <img
+            className="about-image"
             src={ABOUT_IMAGE}
             alt="Lunettes à verres teintés noirs Optic Prestance"
             style={{
@@ -167,6 +170,7 @@ export function About() {
         }}
       >
         <div
+          className="about-stats-grid"
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
@@ -215,17 +219,20 @@ export function About() {
 
       <style>{`
         @media (max-width: 900px) {
-          #apropos > div:first-child { grid-template-columns: 1fr !important; gap: 40px !important; }
-          #apropos > div:first-child > div:first-child { display: none; }
-          #apropos .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .about-top-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .about-image-accent { display: none; }
+          .about-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 768px) {
-          #apropos > div:last-child > div { grid-template-columns: repeat(2, 1fr) !important; }
-          #apropos > div:last-child > div > div:nth-child(2) { border-right: none !important; }
+          .about-stats-grid > div:nth-child(2) { border-right: none !important; }
+        }
+        @media (max-width: 600px) {
+          .about-top-grid { padding: 0 20px !important; }
+          .about-image { height: 320px !important; }
         }
         @media (max-width: 480px) {
-          #apropos > div:last-child > div { grid-template-columns: 1fr !important; }
-          #apropos > div:last-child > div > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+          .about-stats-grid { grid-template-columns: 1fr !important; }
+          .about-stats-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
         }
       `}</style>
     </section>

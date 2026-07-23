@@ -243,9 +243,12 @@ export function HowItWorks() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          #comment .steps-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 1024px) {
+          #comment .steps-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 40px 0 !important; }
           #comment .connector { display: none; }
+        }
+        @media (max-width: 600px) {
+          #comment .steps-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
         }
       `}</style>
     </section>

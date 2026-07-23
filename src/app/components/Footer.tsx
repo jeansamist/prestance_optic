@@ -2,7 +2,7 @@ import { Eye, Facebook, Instagram, Linkedin } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 
 const quickLinks = ["Accueil", "À propos", "Services", "Portfolio", "Blog", "Contact"];
-const services = ["Conseil visuel", "Fabrication de verres", "Consultation en ligne", "Livraison à domicile", "Réparation & ajustement", "Suivi client"];
+const services = ["Conseil visuel", "Fabrication de verres", "Service dans toute ville", "Livraison à domicile", "Réparation & ajustement", "Suivi client"];
 
 const navIds: Record<string, string> = {
   "Accueil": "#accueil",
@@ -51,7 +51,7 @@ export function Footer() {
               fontFamily: "Inter, sans-serif", fontSize: "14px",
               color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: "24px",
             }}>
-              Cabinet d'opticien à Douala. Conseil, fabrication de verres et consultation en ligne partout au Cameroun.
+              Cabinet d'opticien à Douala. Conseil, fabrication de verres et service dans toutes les villes du Cameroun.
             </p>
 
             <p style={{

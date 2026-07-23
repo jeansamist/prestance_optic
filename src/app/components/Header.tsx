@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Eye } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -60,20 +60,14 @@ export function Header() {
           onClick={(e) => { e.preventDefault(); handleNavClick("#accueil"); }}
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}
         >
-          <div style={{
-            width: "36px", height: "36px", backgroundColor: "#C41230",
-            borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center"
-          }}>
-            <Eye size={20} color="#fff" strokeWidth={2} />
-          </div>
-          <div style={{ lineHeight: 1 }}>
-            <span style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#fff", fontSize: "18px", letterSpacing: "0.5px" }}>
-              OPTIC{" "}
-            </span>
-            <span style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#C41230", fontSize: "18px", letterSpacing: "0.5px" }}>
-              PRESTANCE
-            </span>
-          </div>
+          <img
+            src="/img/logo.png"
+            alt="Optic"
+            style={{ height: "30px", width: "auto", display: "block" }}
+          />
+          <span style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#fff", fontSize: "18px", letterSpacing: "0.5px", lineHeight: 1 }}>
+            PRESTANCE
+          </span>
         </a>
 
         {/* Desktop Nav */}

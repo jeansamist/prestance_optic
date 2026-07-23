@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Aminata Bello",
     location: "Bafoussam",
-    text: "Grâce à la consultation en ligne, j'ai pu commander mes lunettes depuis Bafoussam et les recevoir en quelques jours, sans jamais me déplacer à Douala. Service impeccable !",
+    text: "Grâce à leur service disponible partout au pays, j'ai pu commander mes lunettes depuis Bafoussam et les recevoir en quelques jours, sans jamais me déplacer à Douala. Service impeccable !",
     rating: 5,
     initials: "AB",
   },

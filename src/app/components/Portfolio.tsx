@@ -1,61 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const portfolioItems = [
-  {
-    img: "https://images.unsplash.com/photo-1556306510-31ca015374b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcHRpY2lhbiUyMGV5ZXdlYXIlMjBnbGFzc2VzJTIwc2hvcCUyMG1vZGVybnxlbnwxfHx8fDE3ODMwOTM5OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Montures",
-    title: "Lunettes noires classiques",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1615468822882-4828d2602857?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxvcHRpY2lhbiUyMGV5ZXdlYXIlMjBnbGFzc2VzJTIwc2hvcCUyMG1vZGVybnxlbnwxfHx8fDE3ODMwOTM5OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Verres",
-    title: "Monture argentée sur verre",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533746228171-962520811097?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcHRpY2FsJTIwbGVucyUyMGZhYnJpY2F0aW9uJTIwcHJlY2lzaW9ufGVufDF8fHx8MTc4MzA5Mzk5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Verres",
-    title: "Verre de précision",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1534078477103-9f6a18b3a5e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxvcHRpY2lhbiUyMGV5ZXdlYXIlMjBnbGFzc2VzJTIwc2hvcCUyMG1vZGVybnxlbnwxfHx8fDE3ODMwOTM5OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Montures",
-    title: "Collection complète",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1611222777277-61319d63ca94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxleWVnbGFzc2VzJTIwZnJhbWVzJTIwY29sbGVjdGlvbiUyMGRpc3BsYXl8ZW58MXx8fHwxNzgzMDk0MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Montures",
-    title: "Lunettes de soleil tendance",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1582143434535-eba55a806718?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxvcHRpY2FsJTIwbGVucyUyMGZhYnJpY2F0aW9uJTIwcHJlY2lzaW9ufGVufDF8fHx8MTc4MzA5Mzk5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Verres",
-    title: "Optique de précision",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1486250944723-86bca2b15b06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxleWVnbGFzc2VzJTIwZnJhbWVzJTIwY29sbGVjdGlvbiUyMGRpc3BsYXl8ZW58MXx8fHwxNzgzMDk0MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Boutique",
-    title: "Exposition de montures",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1608539733377-5557e02926b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxleWVnbGFzc2VzJTIwZnJhbWVzJTIwY29sbGVjdGlvbiUyMGRpc3BsYXl8ZW58MXx8fHwxNzgzMDk0MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Montures",
-    title: "Montures brun & noir",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1646084081219-1090f72a531c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxvcHRpY2lhbiUyMGV5ZXdlYXIlMjBnbGFzc2VzJTIwc2hvcCUyMG1vZGVybnxlbnwxfHx8fDE3ODMwOTM5OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    label: "Montures",
-    title: "Monture minimaliste blanche",
-  },
+  { img: "/img/portfolio/portfolio-01.jpeg", label: "Montures", title: "Monture ronde écaille ambrée" },
+  { img: "/img/portfolio/portfolio-02.jpeg", label: "Montures", title: "Monture rectangulaire noire" },
+  { img: "/img/portfolio/portfolio-03.jpeg", label: "Verres", title: "Finition verres sans cerclage" },
+  { img: "/img/portfolio/portfolio-04.jpeg", label: "Montures", title: "Monture FRED sans cerclage" },
+  { img: "/img/portfolio/portfolio-05.jpeg", label: "Montures", title: "Monture ronde bicolore" },
+  { img: "/img/portfolio/portfolio-06.jpeg", label: "Montures", title: "Monture CHANEL ronde dorée" },
+  { img: "/img/portfolio/portfolio-07.jpeg", label: "Montures", title: "Monture Emporio Armani" },
+  { img: "/img/portfolio/portfolio-08.jpeg", label: "Verres", title: "Verres ronds cerclage doré" },
+  { img: "/img/portfolio/portfolio-09.jpeg", label: "Montures", title: "Monture Mont Blanc" },
+  { img: "/img/portfolio/portfolio-10.jpeg", label: "Montures", title: "Lunettes de soleil aviateur" },
 ];
 
-const filters = ["Tous", "Montures", "Verres", "Boutique"];
+const filters = ["Tous", "Montures", "Verres"];
 
 export function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("Tous");
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const filtered = activeFilter === "Tous"
     ? portfolioItems
     : portfolioItems.filter(item => item.label === activeFilter);
+
+  const closeSpotlight = () => setActiveIndex(null);
+  const showPrev = () => setActiveIndex((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
+  const showNext = () => setActiveIndex((i) => (i === null ? null : (i + 1) % filtered.length));
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeSpotlight();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "ArrowRight") showNext();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeIndex, filtered.length]);
+
+  const active = activeIndex !== null ? filtered[activeIndex] : null;
 
   return (
     <section id="portfolio" style={{ backgroundColor: "#F4F4F4", padding: "100px 0" }}>
@@ -79,7 +63,7 @@ export function Portfolio() {
             Notre travail, votre regard
           </h2>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: "16px", color: "#666", lineHeight: 1.7 }}>
-            Un aperçu de nos réalisations : montures, verres sur-mesure et ambiance boutique.
+            Un aperçu de nos réalisations : montures et verres sur-mesure. Cliquez sur une image pour l'agrandir.
           </p>
         </div>
 
@@ -88,7 +72,7 @@ export function Portfolio() {
           {filters.map((f) => (
             <button
               key={f}
-              onClick={() => setActiveFilter(f)}
+              onClick={() => { setActiveFilter(f); setActiveIndex(null); }}
               style={{
                 fontFamily: "Montserrat, sans-serif",
                 fontWeight: 600,
@@ -116,61 +100,123 @@ export function Portfolio() {
           gap: "16px",
         }}>
           {filtered.map((item, i) => (
-            <div
-              key={i}
+            <button
+              key={item.img}
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Agrandir : ${item.title}`}
               style={{
                 position: "relative",
                 overflow: "hidden",
                 aspectRatio: "1",
                 cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                const overlay = e.currentTarget.querySelector<HTMLElement>(".portfolio-overlay");
-                if (overlay) overlay.style.opacity = "1";
-              }}
-              onMouseLeave={(e) => {
-                const overlay = e.currentTarget.querySelector<HTMLElement>(".portfolio-overlay");
-                if (overlay) overlay.style.opacity = "0";
+                border: "none",
+                padding: 0,
+                display: "block",
               }}
             >
               <img
                 src={item.img}
                 alt={item.title}
-                style={{
-                  width: "100%", height: "100%", objectFit: "cover",
-                  transition: "transform 0.4s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
-              <div
-                className="portfolio-overlay"
-                style={{
-                  position: "absolute", inset: 0,
-                  backgroundColor: "rgba(26,26,26,0.85)",
-                  display: "flex", flexDirection: "column",
-                  alignItems: "center", justifyContent: "center",
-                  opacity: 0, transition: "opacity 0.3s",
-                  borderBottom: "4px solid #C41230",
-                }}
-              >
-                <span style={{
-                  fontFamily: "Montserrat, sans-serif", fontWeight: 700, fontSize: "10px",
-                  letterSpacing: "2px", textTransform: "uppercase", color: "#C41230", marginBottom: "8px",
-                }}>
-                  {item.label}
-                </span>
-                <span style={{
-                  fontFamily: "Poppins, sans-serif", fontWeight: 600, fontSize: "18px",
-                  color: "#fff", textAlign: "center", padding: "0 20px",
-                }}>
-                  {item.title}
-                </span>
-              </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Spotlight */}
+      {active && (
+        <div
+          onClick={closeSpotlight}
+          style={{
+            position: "fixed", inset: 0, zIndex: 2000,
+            backgroundColor: "rgba(10,10,10,0.94)",
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            padding: "24px",
+          }}
+        >
+          <button
+            onClick={closeSpotlight}
+            aria-label="Fermer"
+            style={{
+              position: "absolute", top: "24px", right: "24px",
+              width: "44px", height: "44px",
+              backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.4)",
+              color: "#fff", cursor: "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "border-color 0.2s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#C41230")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
+          >
+            <X size={20} />
+          </button>
+
+          {filtered.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); showPrev(); }}
+              aria-label="Image précédente"
+              style={{
+                position: "absolute", left: "24px", top: "50%", transform: "translateY(-50%)",
+                width: "48px", height: "48px",
+                backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.4)",
+                color: "#fff", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                transition: "border-color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#C41230")}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
+            >
+              <ChevronLeft size={22} />
+            </button>
+          )}
+
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: "min(900px, 90vw)", maxHeight: "80vh", display: "flex", flexDirection: "column", alignItems: "center" }}
+          >
+            <img
+              src={active.img}
+              alt={active.title}
+              style={{ maxWidth: "100%", maxHeight: "70vh", objectFit: "contain", border: "6px solid #fff" }}
+            />
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
+              <span style={{
+                fontFamily: "Montserrat, sans-serif", fontWeight: 700, fontSize: "10px",
+                letterSpacing: "2px", textTransform: "uppercase", color: "#C41230",
+              }}>
+                {active.label}
+              </span>
+              <p style={{
+                fontFamily: "Poppins, sans-serif", fontWeight: 600, fontSize: "18px",
+                color: "#fff", marginTop: "8px",
+              }}>
+                {active.title}
+              </p>
+            </div>
+          </div>
+
+          {filtered.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); showNext(); }}
+              aria-label="Image suivante"
+              style={{
+                position: "absolute", right: "24px", top: "50%", transform: "translateY(-50%)",
+                width: "48px", height: "48px",
+                backgroundColor: "transparent", border: "2px solid rgba(255,255,255,0.4)",
+                color: "#fff", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                transition: "border-color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#C41230")}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)")}
+            >
+              <ChevronRight size={22} />
+            </button>
+          )}
+        </div>
+      )}
 
       <style>{`
         @media (max-width: 768px) {

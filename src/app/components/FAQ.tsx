@@ -7,8 +7,8 @@ const faqs = [
     a: "Non, Optic Prestance ne réalise pas de consultation ophtalmologique. Nous fabriquons vos verres à partir d'une ordonnance délivrée par votre ophtalmologiste. Nous travaillons en complémentarité avec les médecins pour vous offrir le meilleur résultat.",
   },
   {
-    q: "Comment fonctionne la consultation en ligne ?",
-    a: "Vous prenez rendez-vous sur le site, échangez en visioconférence avec un opticien Optic Prestance, puis transmettez votre ordonnance. Nous sélectionnons ensemble votre monture et vos verres, puis nous fabriquons et livrons vos lunettes à domicile.",
+    q: "Puis-je être accompagné si je ne suis pas à Douala ?",
+    a: "Oui. Où que vous soyez au Cameroun, contactez-nous par téléphone ou WhatsApp : nous échangeons sur vos besoins, récupérons votre ordonnance, puis fabriquons et livrons vos lunettes directement chez vous.",
   },
   {
     q: "Livrez-vous partout au Cameroun ?",
@@ -27,8 +27,8 @@ const faqs = [
     a: "Nous acceptons les paiements en espèces, par Mobile Money (MTN MoMo, Orange Money) et par virement bancaire. Nous pouvons également convenir d'un paiement en plusieurs fois selon la commande.",
   },
   {
-    q: "Comment envoyer mon ordonnance à distance ?",
-    a: "Vous pouvez prendre en photo votre ordonnance et nous l'envoyer par e-mail, WhatsApp ou lors de votre consultation en ligne. Assurez-vous que tous les chiffres et mentions sont bien lisibles.",
+    q: "Comment vous envoyer mon ordonnance ?",
+    a: "Vous pouvez prendre en photo votre ordonnance et nous l'envoyer par e-mail ou WhatsApp. Assurez-vous que tous les chiffres et mentions sont bien lisibles.",
   },
 ];
 

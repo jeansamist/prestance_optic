@@ -1,20 +1,20 @@
-const ONLINE_IMAGE = "https://images.unsplash.com/photo-1758691462749-a95ce1bd7f96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMGNhbGwlMjBvbmxpbmUlMjBjb25zdWx0YXRpb24lMjBkb2N0b3J8ZW58MXx8fHwxNzgzMDk0MDAzfDA&ixlib=rb-4.1.0&q=80&w=1080";
+const BACKGROUND_IMAGE = "/img/portfolio/portfolio-08.jpeg";
 
 const steps = [
   {
     num: "01",
-    title: "Prise de rendez-vous",
-    desc: "Réservez un créneau de consultation en ligne depuis le site, via WhatsApp ou par téléphone.",
+    title: "Prise de contact",
+    desc: "Contactez-nous depuis le site, par téléphone ou WhatsApp pour exprimer votre besoin, où que vous soyez.",
   },
   {
     num: "02",
-    title: "Consultation vidéo",
-    desc: "Échangez avec un opticien Optic Prestance et transmettez votre ordonnance.",
+    title: "Échange avec un opticien",
+    desc: "Discutez avec un opticien Optic Prestance et transmettez votre ordonnance.",
   },
   {
     num: "03",
     title: "Choix monture & verres",
-    desc: "Sélection guidée à distance parmi notre catalogue de montures et de verres.",
+    desc: "Sélection guidée parmi notre catalogue de montures et de verres, adaptée à vos besoins.",
   },
   {
     num: "04",
@@ -39,8 +39,8 @@ export function HowItWorks() {
       {/* Background image with heavy overlay */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img
-          src={ONLINE_IMAGE}
-          alt="Consultation en ligne"
+          src={BACKGROUND_IMAGE}
+          alt=""
           style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.08 }}
         />
       </div>
@@ -71,7 +71,7 @@ export function HowItWorks() {
             maxWidth: "680px",
             margin: "0 auto 16px",
           }}>
-            Votre nouvelle paire de lunettes, en 5 étapes, sans vous déplacer
+            Votre nouvelle paire de lunettes, en 5 étapes, où que vous soyez
           </h2>
         </div>
 
@@ -178,7 +178,7 @@ export function HowItWorks() {
               e.currentTarget.style.color = "#fff";
             }}
           >
-            Démarrer ma consultation en ligne
+            Démarrer ma commande
           </button>
         </div>
       </div>

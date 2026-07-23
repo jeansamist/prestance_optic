@@ -1,11 +1,16 @@
-import { ChevronDown, GraduationCap, Microscope, Monitor, Radio, Truck } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChevronDown, GraduationCap, MapPin, Microscope, Truck } from "lucide-react";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1536766820879-059fec98ec0a?crop=faces&cs=tinysrgb&fit=crop&fm=jpg&q=80&w=1920&h=1080";
+const HERO_IMAGES = [
+  "/img/hero-images/hero-01.jpeg",
+  "/img/hero-images/hero-02.jpeg",
+  "/img/hero-images/hero-03.jpeg",
+];
 
 const reassuranceItems = [
   { icon: <GraduationCap size={28} />, label: "Opticiens diplômés & expérimentés" },
   { icon: <Microscope size={28} />, label: "Verres fabriqués sur-mesure" },
-  { icon: <Radio size={28} />, label: "Consultation à distance, partout au Cameroun" },
+  { icon: <MapPin size={28} />, label: "Intervention dans toutes les villes du Cameroun" },
   { icon: <Truck size={28} />, label: "Livraison à domicile" },
 ];
 
@@ -15,15 +20,32 @@ function handleScroll(href: string) {
 }
 
 export function Hero() {
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % HERO_IMAGES.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="accueil" style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       {/* Background */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-        <img
-          src={HERO_IMAGE}
-          alt="Homme portant des lunettes à verres teintés noirs"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-        />
+        {HERO_IMAGES.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt="Monture de lunettes haut de gamme Optic Prestance"
+            style={{
+              position: "absolute", inset: 0,
+              width: "100%", height: "100%", objectFit: "cover", objectPosition: "center",
+              opacity: i === heroIndex ? 1 : 0,
+              transition: "opacity 1.2s ease",
+            }}
+          />
+        ))}
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(135deg, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.65) 100%)"
@@ -69,7 +91,7 @@ export function Hero() {
             marginBottom: "44px",
           }}>
             Cabinet d'opticien à Douala : conseil personnalisé, fabrication de verres
-            sur-mesure et consultation en ligne partout au Cameroun.
+            sur-mesure et intervention dans toutes les villes du Cameroun.
           </p>
 
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
@@ -114,8 +136,8 @@ export function Hero() {
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#fff"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)"; }}
             >
-              <Monitor size={16} />
-              Consultation en ligne
+              <MapPin size={16} />
+              Comment ça marche
             </button>
           </div>
         </div>

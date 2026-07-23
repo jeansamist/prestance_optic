@@ -1,4 +1,4 @@
-const ABOUT_IMAGE = "https://images.unsplash.com/photo-1572635196237-14b3f281503f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&w=1080&h=1080";
+const ABOUT_IMAGE = "/img/about-us.jpeg";
 
 const stats = [
   { value: "+10", label: "Années d'expertise en optique" },
@@ -101,9 +101,9 @@ export function About() {
             color: "#555",
             marginBottom: "20px",
           }}>
-            Grâce à notre service de consultation en ligne, nous suivons désormais nos clients où qu'ils
-            se trouvent sur le territoire camerounais : prise de mesures à distance, conseils personnalisés,
-            fabrication et livraison à domicile.
+            Grâce à notre organisation, nous accompagnons désormais nos clients où qu'ils se trouvent
+            sur le territoire camerounais : prise de contact facilitée, conseils personnalisés,
+            fabrication et livraison à domicile, quelle que soit votre ville.
           </p>
 
           <p style={{

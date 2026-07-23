@@ -34,7 +34,7 @@ export function Contact() {
             Parlons de votre regard
           </h2>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: "16px", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
-            Consultation en ligne et livraison disponibles pour toute personne résidant hors de Douala.
+            Nous intervenons et livrons partout au Cameroun, quelle que soit votre ville.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export function Contact() {
                   >
                     <option value="" style={{ backgroundColor: "#1A1A1A" }}>Choisir un sujet</option>
                     <option value="rdv" style={{ backgroundColor: "#1A1A1A" }}>Prise de rendez-vous</option>
-                    <option value="online" style={{ backgroundColor: "#1A1A1A" }}>Consultation en ligne</option>
+                    <option value="online" style={{ backgroundColor: "#1A1A1A" }}>Service hors Douala</option>
                     <option value="devis" style={{ backgroundColor: "#1A1A1A" }}>Demande de devis</option>
                     <option value="reparation" style={{ backgroundColor: "#1A1A1A" }}>Réparation / Ajustement</option>
                     <option value="autre" style={{ backgroundColor: "#1A1A1A" }}>Autre</option>
@@ -233,7 +233,7 @@ export function Contact() {
             }}>
               {[
                 { icon: <MapPin size={20} />, title: "Adresse", value: "Douala, Cameroun\nQuartier à préciser" },
-                { icon: <Phone size={20} />, title: "Téléphone / WhatsApp", value: "+237 6XX XXX XXX" },
+                { icon: <Phone size={20} />, title: "Téléphone / WhatsApp", value: "+237 690 934 977\n+237 699 866 750" },
                 { icon: <Mail size={20} />, title: "E-mail", value: "contact@opticprestance.cm" },
                 { icon: <Clock size={20} />, title: "Horaires", value: "Lun – Sam\n08h00 – 18h00" },
               ].map((info, i) => (
@@ -265,7 +265,7 @@ export function Contact() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/237600000000"
+              href="https://wa.me/237690934977"
               target="_blank"
               rel="noopener noreferrer"
               style={{

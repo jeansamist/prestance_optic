@@ -5,6 +5,7 @@ import {
   Droplets,
   Eye,
   Feather,
+  MapPin,
   MessageCircle,
   Monitor,
   Palette,
@@ -60,14 +61,14 @@ const mainServices = [
     desc: "Une sélection de montures optiques et solaires, classiques ou tendances, pour toutes les morphologies et tous les budgets.",
   },
   {
-    icon: <Monitor size={28} />,
-    title: "Consultation en ligne",
-    desc: "Où que vous soyez au Cameroun, échangez en visioconférence avec un opticien Optic Prestance : conseil, mesures, ordonnance, fabrication et livraison.",
+    icon: <MapPin size={28} />,
+    title: "Service dans toutes les villes",
+    desc: "Où que vous soyez au Cameroun, contactez un opticien Optic Prestance par téléphone ou WhatsApp : conseil, prise en charge de votre ordonnance, fabrication et livraison.",
   },
   {
     icon: <MessageCircle size={28} />,
-    title: "Suivi client à distance",
-    desc: "Suivi personnalisé après chaque commande : ajustements, questions, renouvellement — accessible par téléphone, WhatsApp ou visioconférence.",
+    title: "Suivi client personnalisé",
+    desc: "Suivi personnalisé après chaque commande : ajustements, questions, renouvellement — accessible par téléphone ou WhatsApp, quelle que soit votre ville.",
   },
   {
     icon: <Wrench size={28} />,
@@ -130,8 +131,8 @@ export function Services() {
             maxWidth: "600px",
             margin: "0 auto",
           }}>
-            Du conseil à la fabrication, en passant par le suivi à distance :
-            Optic Prestance prend soin de votre vue à chaque étape.
+            Du conseil à la fabrication, jusqu'au suivi après-vente :
+            Optic Prestance prend soin de votre vue à chaque étape, partout au Cameroun.
           </p>
         </div>
 

@@ -9,27 +9,34 @@ const stats = [
 
 export function About() {
   return (
-    <section id="apropos" style={{ backgroundColor: "#F4F4F4", padding: "100px 0 0" }}>
-      <div style={{
-        maxWidth: "1280px",
-        margin: "0 auto",
-        padding: "0 24px",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "80px",
-        alignItems: "center",
-      }}>
+    <section
+      id="apropos"
+      style={{ backgroundColor: "#F4F4F4", padding: "100px 0 0" }}
+    >
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 24px",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "80px",
+          alignItems: "center",
+        }}
+      >
         {/* Image */}
         <div style={{ position: "relative" }}>
-          <div style={{
-            position: "absolute",
-            top: "-20px",
-            left: "-20px",
-            width: "60px",
-            height: "60px",
-            backgroundColor: "#C41230",
-            zIndex: 0,
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              top: "-20px",
+              left: "-20px",
+              width: "60px",
+              height: "60px",
+              backgroundColor: "#C41230",
+              zIndex: 0,
+            }}
+          />
           <img
             src={ABOUT_IMAGE}
             alt="Lunettes à verres teintés noirs Optic Prestance"
@@ -43,124 +50,162 @@ export function About() {
               boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
             }}
           />
-          <div style={{
-            position: "absolute",
-            bottom: "-20px",
-            right: "-20px",
-            width: "100px",
-            height: "100px",
-            border: "4px solid #C41230",
-            zIndex: 0,
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-20px",
+              right: "-20px",
+              width: "100px",
+              height: "100px",
+              border: "4px solid #C41230",
+              zIndex: 0,
+            }}
+          />
         </div>
 
         {/* Text */}
         <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
-            <div style={{ width: "40px", height: "3px", backgroundColor: "#C41230" }} />
-            <span style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 700,
-              fontSize: "11px",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              color: "#C41230",
-            }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              marginBottom: "20px",
+            }}
+          >
+            <div
+              style={{
+                width: "40px",
+                height: "3px",
+                backgroundColor: "#C41230",
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "Montserrat, sans-serif",
+                fontWeight: 700,
+                fontSize: "11px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                color: "#C41230",
+              }}
+            >
               À propos
             </span>
           </div>
 
-          <h2 style={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 700,
-            fontSize: "clamp(28px, 3.5vw, 42px)",
-            color: "#1A1A1A",
-            lineHeight: 1.2,
-            marginBottom: "28px",
-          }}>
-            L'excellence visuelle, une affaire de <span style={{ color: "#C41230" }}>Prestance</span>
+          <h2
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(28px, 3.5vw, 42px)",
+              color: "#1A1A1A",
+              lineHeight: 1.2,
+              marginBottom: "28px",
+            }}
+          >
+            L'excellence visuelle, une affaire de{" "}
+            <span style={{ color: "#C41230" }}>Prestance</span>
           </h2>
 
-          <p style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
-            lineHeight: 1.8,
-            color: "#555",
-            marginBottom: "20px",
-          }}>
-            Implanté au cœur de Douala, Optic Prestance est un cabinet d'opticien dédié au conseil
-            visuel et à la fabrication de verres optiques de qualité. Nous accompagnons chaque client
-            dans le choix de sa monture, la conception de ses verres et l'entretien de son équipement,
-            avec la même exigence de précision et de style.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              lineHeight: 1.8,
+              color: "#555",
+              marginBottom: "20px",
+            }}
+          >
+            Implanté au cœur de Douala, Optic Prestance est un cabinet
+            d'opticien dédié au conseil visuel et à la fabrication de verres
+            optiques de qualité. Nous accompagnons chaque client dans le choix
+            de sa monture, la conception de ses verres et l'entretien de son
+            équipement, avec la même exigence de précision et de style.
           </p>
 
-          <p style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "16px",
-            lineHeight: 1.8,
-            color: "#555",
-            marginBottom: "20px",
-          }}>
-            Grâce à notre organisation, nous accompagnons désormais nos clients où qu'ils se trouvent
-            sur le territoire camerounais : prise de contact facilitée, conseils personnalisés,
-            fabrication et livraison à domicile, quelle que soit votre ville.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              lineHeight: 1.8,
+              color: "#555",
+              marginBottom: "20px",
+            }}
+          >
+            Grâce à notre organisation, nous accompagnons désormais nos clients
+            où qu'ils se trouvent sur le territoire camerounais : prise de
+            contact facilitée, conseils personnalisés, fabrication et livraison
+            à domicile.
           </p>
 
-          <p style={{
-            fontFamily: "Inter, sans-serif",
-            fontSize: "14px",
-            lineHeight: 1.8,
-            color: "#888",
-            fontStyle: "italic",
-            borderLeft: "3px solid #C41230",
-            paddingLeft: "16px",
-            marginBottom: "40px",
-          }}>
-            Optic Prestance n'exerce pas la médecine. Nous travaillons en complémentarité avec votre
-            ophtalmologiste et intervenons sur la base de votre prescription pour concevoir et fabriquer
-            vos verres avec précision.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              lineHeight: 1.8,
+              color: "#888",
+              fontStyle: "italic",
+              borderLeft: "3px solid #C41230",
+              paddingLeft: "16px",
+              marginBottom: "40px",
+            }}
+          >
+            Optic Prestance n'exerce pas la médecine. Nous travaillons en
+            complémentarité avec votre ophtalmologiste et intervenons sur la
+            base de votre prescription pour concevoir et fabriquer vos verres
+            avec précision.
           </p>
         </div>
       </div>
 
       {/* Stats Band */}
-      <div style={{
-        backgroundColor: "#1A1A1A",
-        marginTop: "80px",
-      }}>
-        <div style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 24px",
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "0",
-        }}>
+      <div
+        style={{
+          backgroundColor: "#1A1A1A",
+          marginTop: "80px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1280px",
+            margin: "0 auto",
+            padding: "0 24px",
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "0",
+          }}
+        >
           {stats.map((stat, i) => (
             <div
               key={i}
               style={{
                 padding: "52px 24px",
                 textAlign: "center",
-                borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                borderRight:
+                  i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
               }}
             >
-              <div style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 700,
-                fontSize: "48px",
-                color: "#C41230",
-                lineHeight: 1,
-                marginBottom: "12px",
-              }}>
+              <div
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "48px",
+                  color: "#C41230",
+                  lineHeight: 1,
+                  marginBottom: "12px",
+                }}
+              >
                 {stat.value}
               </div>
-              <div style={{
-                fontFamily: "Inter, sans-serif",
-                fontSize: "14px",
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: 1.5,
-              }}>
+              <div
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  color: "rgba(255,255,255,0.65)",
+                  lineHeight: 1.5,
+                }}
+              >
                 {stat.label}
               </div>
             </div>

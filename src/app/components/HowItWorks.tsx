@@ -4,7 +4,7 @@ const steps = [
   {
     num: "01",
     title: "Prise de contact",
-    desc: "Contactez-nous depuis le site, par téléphone ou WhatsApp pour exprimer votre besoin, où que vous soyez.",
+    desc: "Contactez-nous depuis le site, par téléphone ou WhatsApp pour exprimer votre besoin.",
   },
   {
     num: "02",
@@ -24,7 +24,7 @@ const steps = [
   {
     num: "05",
     title: "Livraison partout au Cameroun",
-    desc: "Vos lunettes sont livrées à votre porte, où que vous soyez sur le territoire.",
+    desc: "Vos lunettes sont livrées à votre porte.",
   },
 ];
 
@@ -35,64 +35,113 @@ function handleScroll(href: string) {
 
 export function HowItWorks() {
   return (
-    <section id="comment" style={{ backgroundColor: "#1A1A1A", padding: "100px 0", position: "relative", overflow: "hidden" }}>
+    <section
+      id="comment"
+      style={{
+        backgroundColor: "#1A1A1A",
+        padding: "100px 0",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
       {/* Background image with heavy overlay */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img
           src={BACKGROUND_IMAGE}
           alt=""
-          style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.08 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.08,
+          }}
         />
       </div>
 
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 24px",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "72px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "20px" }}>
-            <div style={{ width: "40px", height: "3px", backgroundColor: "#C41230" }} />
-            <span style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 700,
-              fontSize: "11px",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              color: "#C41230",
-            }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "12px",
+              marginBottom: "20px",
+            }}
+          >
+            <div
+              style={{
+                width: "40px",
+                height: "3px",
+                backgroundColor: "#C41230",
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "Montserrat, sans-serif",
+                fontWeight: 700,
+                fontSize: "11px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                color: "#C41230",
+              }}
+            >
               Comment ça marche
             </span>
-            <div style={{ width: "40px", height: "3px", backgroundColor: "#C41230" }} />
+            <div
+              style={{
+                width: "40px",
+                height: "3px",
+                backgroundColor: "#C41230",
+              }}
+            />
           </div>
-          <h2 style={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 700,
-            fontSize: "clamp(26px, 3.5vw, 44px)",
-            color: "#fff",
-            lineHeight: 1.2,
-            maxWidth: "680px",
-            margin: "0 auto 16px",
-          }}>
-            Votre nouvelle paire de lunettes, en 5 étapes, où que vous soyez
+          <h2
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(26px, 3.5vw, 44px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              maxWidth: "680px",
+              margin: "0 auto 16px",
+            }}
+          >
+            Votre nouvelle paire de lunettes, en 5 étapes, partout au Cameroun
           </h2>
         </div>
 
         {/* Steps */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
-          gap: "0",
-          position: "relative",
-          marginBottom: "64px",
-        }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gap: "0",
+            position: "relative",
+            marginBottom: "64px",
+          }}
+        >
           {/* Connector line */}
-          <div style={{
-            position: "absolute",
-            top: "36px",
-            left: "10%",
-            right: "10%",
-            height: "2px",
-            backgroundColor: "rgba(196,18,48,0.3)",
-            zIndex: 0,
-          }} />
+          <div
+            style={{
+              position: "absolute",
+              top: "36px",
+              left: "10%",
+              right: "10%",
+              height: "2px",
+              backgroundColor: "rgba(196,18,48,0.3)",
+              zIndex: 0,
+            }}
+          />
 
           {steps.map((step, i) => (
             <div
@@ -108,44 +157,52 @@ export function HowItWorks() {
               }}
             >
               {/* Number circle */}
-              <div style={{
-                width: "72px",
-                height: "72px",
-                borderRadius: "50%",
-                backgroundColor: "#C41230",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: "28px",
-                flexShrink: 0,
-                boxShadow: "0 0 0 8px rgba(196,18,48,0.15)",
-              }}>
-                <span style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 700,
-                  fontSize: "20px",
-                  color: "#fff",
-                }}>
+              <div
+                style={{
+                  width: "72px",
+                  height: "72px",
+                  borderRadius: "50%",
+                  backgroundColor: "#C41230",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "28px",
+                  flexShrink: 0,
+                  boxShadow: "0 0 0 8px rgba(196,18,48,0.15)",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "20px",
+                    color: "#fff",
+                  }}
+                >
                   {step.num}
                 </span>
               </div>
 
-              <h3 style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 600,
-                fontSize: "15px",
-                color: "#fff",
-                marginBottom: "12px",
-                lineHeight: 1.3,
-              }}>
+              <h3
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "15px",
+                  color: "#fff",
+                  marginBottom: "12px",
+                  lineHeight: 1.3,
+                }}
+              >
                 {step.title}
               </h3>
-              <p style={{
-                fontFamily: "Inter, sans-serif",
-                fontSize: "13px",
-                color: "rgba(255,255,255,0.55)",
-                lineHeight: 1.6,
-              }}>
+              <p
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.55)",
+                  lineHeight: 1.6,
+                }}
+              >
                 {step.desc}
               </p>
             </div>

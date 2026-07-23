@@ -34,7 +34,7 @@ export function Contact() {
             Parlons de votre regard
           </h2>
           <p style={{ fontFamily: "Inter, sans-serif", fontSize: "16px", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
-            Nous intervenons et livrons partout au Cameroun, quelle que soit votre ville.
+            Nous intervenons et livrons partout au Cameroun.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export function Contact() {
                   >
                     <option value="" style={{ backgroundColor: "#1A1A1A" }}>Choisir un sujet</option>
                     <option value="rdv" style={{ backgroundColor: "#1A1A1A" }}>Prise de rendez-vous</option>
-                    <option value="online" style={{ backgroundColor: "#1A1A1A" }}>Service hors Douala</option>
+                    <option value="online" style={{ backgroundColor: "#1A1A1A" }}>Service partout au Cameroun</option>
                     <option value="devis" style={{ backgroundColor: "#1A1A1A" }}>Demande de devis</option>
                     <option value="reparation" style={{ backgroundColor: "#1A1A1A" }}>Réparation / Ajustement</option>
                     <option value="autre" style={{ backgroundColor: "#1A1A1A" }}>Autre</option>

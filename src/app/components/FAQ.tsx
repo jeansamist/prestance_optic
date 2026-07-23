@@ -7,12 +7,12 @@ const faqs = [
     a: "Non, Optic Prestance ne réalise pas de consultation ophtalmologique. Nous fabriquons vos verres à partir d'une ordonnance délivrée par votre ophtalmologiste. Nous travaillons en complémentarité avec les médecins pour vous offrir le meilleur résultat.",
   },
   {
-    q: "Puis-je être accompagné si je ne suis pas à Douala ?",
-    a: "Oui. Où que vous soyez au Cameroun, contactez-nous par téléphone ou WhatsApp : nous échangeons sur vos besoins, récupérons votre ordonnance, puis fabriquons et livrons vos lunettes directement chez vous.",
+    q: "Intervenez-vous partout au Cameroun ?",
+    a: "Oui, nous intervenons partout au Cameroun. Contactez-nous par téléphone ou WhatsApp : nous échangeons sur vos besoins, récupérons votre ordonnance, puis fabriquons et livrons vos lunettes directement chez vous.",
   },
   {
     q: "Livrez-vous partout au Cameroun ?",
-    a: "Oui, nous livrons dans toutes les régions du pays après fabrication de vos verres à Douala. Le délai de livraison dépend de votre localisation et est communiqué lors de la commande.",
+    a: "Oui, nous livrons partout au pays après fabrication de vos verres à Douala. Le délai de livraison dépend de votre localisation et est communiqué lors de la commande.",
   },
   {
     q: "Quels sont les délais de fabrication ?",

@@ -10,7 +10,7 @@ const HERO_IMAGES = [
 const reassuranceItems = [
   { icon: <GraduationCap size={28} />, label: "Opticiens diplômés & expérimentés" },
   { icon: <Microscope size={28} />, label: "Verres fabriqués sur-mesure" },
-  { icon: <MapPin size={28} />, label: "Intervention dans toutes les villes du Cameroun" },
+  { icon: <MapPin size={28} />, label: "Intervention partout au Cameroun" },
   { icon: <Truck size={28} />, label: "Livraison à domicile" },
 ];
 
@@ -91,7 +91,7 @@ export function Hero() {
             marginBottom: "44px",
           }}>
             Cabinet d'opticien à Douala : conseil personnalisé, fabrication de verres
-            sur-mesure et intervention dans toutes les villes du Cameroun.
+            sur-mesure et intervention partout au Cameroun.
           </p>
 
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>

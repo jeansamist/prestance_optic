@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -57,26 +57,37 @@ export function Header() {
         {/* Logo */}
         <a
           href="#accueil"
-          onClick={(e) => { e.preventDefault(); handleNavClick("#accueil"); }}
-          style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("#accueil");
+          }}
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}
         >
           <img
             src="/img/logo.png"
             alt="Optic"
-            style={{ height: "30px", width: "auto", display: "block" }}
+            style={{ height: "50px", width: "auto", display: "block" }}
           />
-          <span style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, color: "#fff", fontSize: "18px", letterSpacing: "0.5px", lineHeight: 1 }}>
-            PRESTANCE
-          </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav style={{ display: "flex", gap: "28px", alignItems: "center" }} className="desktop-nav">
+        <nav
+          style={{ display: "flex", gap: "28px", alignItems: "center" }}
+          className="desktop-nav"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(link.href);
+              }}
               style={{
                 fontFamily: "Montserrat, sans-serif",
                 fontWeight: 500,
@@ -112,8 +123,12 @@ export function Header() {
             transition: "background-color 0.2s",
             whiteSpace: "nowrap",
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1A1A1A")}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C41230")}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.backgroundColor = "#1A1A1A")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.backgroundColor = "#C41230")
+          }
           className="desktop-cta"
         >
           Prendre rendez-vous
@@ -122,7 +137,14 @@ export function Header() {
         {/* Mobile Burger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          style={{ background: "none", border: "none", cursor: "pointer", color: "#fff", padding: "4px", display: "none" }}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "#fff",
+            padding: "4px",
+            display: "none",
+          }}
           className="mobile-burger"
           aria-label="Menu"
         >
@@ -150,7 +172,10 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(link.href);
+              }}
               style={{
                 fontFamily: "Montserrat, sans-serif",
                 fontWeight: 500,

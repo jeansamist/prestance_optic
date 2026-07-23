@@ -1,7 +1,10 @@
+import { useRef, useState } from "react";
 import {
   ArrowUpDown,
   Baby,
   Car,
+  ChevronLeft,
+  ChevronRight,
   Droplets,
   Eye,
   Feather,
@@ -145,6 +148,35 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export function Services() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const scrollToSlide = (i: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const clamped = Math.max(0, Math.min(mainServices.length - 1, i));
+    const card = track.children[clamped] as HTMLElement | undefined;
+    if (card) {
+      track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+    }
+    setActiveSlide(clamped);
+  };
+
+  const handleTrackScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    let closest = 0;
+    let closestDist = Infinity;
+    Array.from(track.children).forEach((child, i) => {
+      const dist = Math.abs((child as HTMLElement).offsetLeft - track.scrollLeft);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = i;
+      }
+    });
+    setActiveSlide(closest);
+  };
+
   return (
     <section
       id="services"
@@ -264,11 +296,15 @@ export function Services() {
           ))}
         </div>
 
-        {/* Main Services Marquee — mobile only, auto-scrolls right to left */}
-        <div className="services-marquee" style={{ marginBottom: "80px" }}>
-          <div className="services-marquee-track">
-            {[...mainServices, ...mainServices].map((service, i) => (
-              <div className="services-marquee-card" key={i}>
+        {/* Main Services Slider — mobile only, manual with buttons + swipe */}
+        <div className="services-slider" style={{ marginBottom: "80px" }}>
+          <div
+            ref={trackRef}
+            className="services-slider-track"
+            onScroll={handleTrackScroll}
+          >
+            {mainServices.map((service, i) => (
+              <div className="services-slider-card" key={i}>
                 <div style={{ color: "#C41230", marginBottom: "16px" }}>
                   {service.icon}
                 </div>
@@ -296,6 +332,39 @@ export function Services() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="services-slider-controls">
+            <button
+              onClick={() => scrollToSlide(activeSlide - 1)}
+              disabled={activeSlide === 0}
+              aria-label="Service précédent"
+              className="services-slider-btn"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <div className="services-slider-dots">
+              {mainServices.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollToSlide(i)}
+                  aria-label={`Aller au service ${i + 1}`}
+                  className="services-slider-dot"
+                  style={{
+                    width: i === activeSlide ? "24px" : "8px",
+                    backgroundColor: i === activeSlide ? "#C41230" : "#ddd",
+                  }}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => scrollToSlide(activeSlide + 1)}
+              disabled={activeSlide === mainServices.length - 1}
+              aria-label="Service suivant"
+              className="services-slider-btn"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
         </div>
 
@@ -436,26 +505,66 @@ export function Services() {
       </div>
 
       <style>{`
-        .services-marquee { display: none; }
+        .services-slider { display: none; }
 
-        .services-marquee-track {
+        .services-slider-track {
           display: flex;
           gap: 16px;
-          width: max-content;
-          animation: services-scroll 120s linear infinite;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding: 2px 2px 8px;
+          margin: -2px -2px 0;
         }
-        .services-marquee-card {
-          flex: 0 0 240px;
+        .services-slider-track::-webkit-scrollbar { display: none; }
+        .services-slider-card {
+          flex: 0 0 82%;
+          scroll-snap-align: start;
           background-color: #F4F4F4;
           border-top: 3px solid #C41230;
-          padding: 28px 20px;
+          padding: 28px 24px;
         }
-        @keyframes services-scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+        .services-slider-controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+          margin-top: 24px;
         }
-        @media (prefers-reduced-motion: reduce) {
-          .services-marquee-track { animation: none; }
+        .services-slider-btn {
+          flex-shrink: 0;
+          width: 44px;
+          height: 44px;
+          border: 2px solid #1A1A1A;
+          background: transparent;
+          color: #1A1A1A;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .services-slider-btn:hover:not(:disabled) {
+          background-color: #C41230;
+          border-color: #C41230;
+          color: #fff;
+        }
+        .services-slider-btn:disabled {
+          opacity: 0.3;
+          cursor: default;
+        }
+        .services-slider-dots {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .services-slider-dot {
+          height: 8px;
+          border: none;
+          border-radius: 2px;
+          cursor: pointer;
+          transition: all 0.3s;
         }
 
         @media (max-width: 1024px) {
@@ -467,7 +576,7 @@ export function Services() {
         }
         @media (max-width: 700px) {
           #services .services-grid { display: none !important; }
-          #services .services-marquee { display: block !important; overflow: hidden; }
+          #services .services-slider { display: block !important; }
         }
         @media (max-width: 480px) {
           #services .services-lens-grid { grid-template-columns: 1fr !important; }

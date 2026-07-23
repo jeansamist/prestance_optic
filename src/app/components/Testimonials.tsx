@@ -75,7 +75,7 @@ export function Testimonials() {
         </div>
 
         {/* Carousel */}
-        <div style={{
+        <div className="carousel-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: "24px",

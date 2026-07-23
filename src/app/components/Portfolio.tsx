@@ -94,7 +94,7 @@ export function Portfolio() {
         </div>
 
         {/* Grid */}
-        <div style={{
+        <div className="portfolio-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: "16px",
@@ -220,10 +220,10 @@ export function Portfolio() {
 
       <style>{`
         @media (max-width: 768px) {
-          #portfolio .grid { grid-template-columns: repeat(2, 1fr) !important; }
+          #portfolio .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 480px) {
-          #portfolio .grid { grid-template-columns: 1fr !important; }
+          #portfolio .portfolio-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
